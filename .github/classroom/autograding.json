@@ -1,77 +1,77 @@
-{ "repo": "helsoc7/nter-html",
+{
+  "repo": "helsoc7/sudoku-html",
   "introduction": "Eure Aufgabe ist es, eine HTML-Datei namens sudoku.html zu erstellen mit einer HTML Tabelle für das Spielfeld.",
   "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Sudoku_parts.svg/640px-Sudoku_parts.svg.png",
-  "timeframe":"45 Minuten (Viel Erfolg!)",
+  "timeframe": "45 Minuten (Viel Erfolg!)",
   "tests": [
-
-  {
-  "specs": {
-    "title": "Richte ein 9x9 Sudoku-Gitter mit der ID 'sudoku-grid' mit Hilfe einer HTML-Tabelle ein"
-  },
-  "name": "Set up a 9x9 Sudoku grid with ID 'sudoku-grid'",
-  "feedback": "There should be a 9x9 table grid with the ID 'sudoku-grid'.",
-  "urls": [],
-  "file": "sudoku.html",
-  "javascript": "(function checkRow(grid, rowIndex = 0) { if (rowIndex >= 9) return 'true'; if (!grid || grid.rows.length !== 9 || grid.rows[rowIndex].cells.length !== 9) return 'false'; return checkRow(grid, rowIndex + 1); })(document.querySelector('#sudoku-grid'))",
-  "output": "true",
-  "comparison": "exact",
-  "points": 20
-},
     {
-  "specs": {
-    "title": "Füge in jede Zelle des Sudoku-Gitters ein Input-Element ein und setze die Größe auf 1"
-  },
-  "name": "Include an input element in each cell of the Sudoku grid and use size 1 for each field",
-  "feedback": "Each cell in the Sudoku grid should contain an input element sized to 1.",
-  "urls": ["https://www.w3schools.com/tags/tag_input.asp"],
-  "file": "sudoku.html",
-  "javascript": "(function() { return document.querySelectorAll('#sudoku-grid td input[type=\"text\"]').length === 81 && [...document.querySelectorAll('#sudoku-grid td input[type=\"text\"]')].every(inp => inp.getAttribute('size') === '1'); })()",
-  "output": "true",
-  "comparison": "exact",
-  "points": 20
-},
+      "specs": {
+        "title": "Richte ein 9x9 Sudoku-Gitter mit der ID 'sudoku-grid' mit Hilfe einer HTML-Tabelle ein"
+      },
+      "name": "Set up a 9x9 Sudoku grid with ID 'sudoku-grid'",
+      "feedback": "There should be a 9x9 table grid with the ID 'sudoku-grid'.",
+      "urls": [],
+      "file": "sudoku.html",
+      "javascript": "(function checkRow(grid, rowIndex = 0) { if (rowIndex >= 9) return 'true'; if (!grid || grid.rows.length !== 9 || grid.rows[rowIndex].cells.length !== 9) return 'false'; return checkRow(grid, rowIndex + 1); })(document.querySelector('#sudoku-grid'))",
+      "output": "true",
+      "comparison": "exact",
+      "points": 20
+    },
     {
-  "specs": {
-    "title": "Füge unterhalb des Sudoku-Feldes eine Schaltfläche 'Lösung überprüfen' mit der ID 'check-solution' hinzu"
-  },
-  "name": "Include a button with ID 'check-solution' below the grid",
-  "feedback": "There should be a button below the grid with the text 'Lösung überprüfen' and an ID of 'check-solution'.",
-  "urls": ["https://www.w3schools.com/tags/tag_button.asp"],
-  "file": "sudoku.html",
-  "javascript": "(function() { var checkButton = document.querySelector('button#check-solution'); return checkButton && checkButton.textContent.trim() === 'Lösung überprüfen' ? 'true' : 'false'; })()",
-  "output": "true",
-  "comparison": "exact",
-  "points": 20
-},
-
+      "specs": {
+        "title": "Füge in jede Zelle des Sudoku-Gitters ein Input-Element ein und setze die Größe auf 1"
+      },
+      "name": "Include an input element in each cell of the Sudoku grid and use size 1 for each field",
+      "feedback": "Each cell in the Sudoku grid should contain an input element sized to 1.",
+      "urls": [
+        "https://www.w3schools.com/tags/tag_input.asp"
+      ],
+      "file": "sudoku.html",
+      "javascript": "(function() { return document.querySelectorAll('#sudoku-grid td input[type=\"text\"]').length === 81 && [...document.querySelectorAll('#sudoku-grid td input[type=\"text\"]')].every(inp => inp.getAttribute('size') === '1'); })()",
+      "output": "true",
+      "comparison": "exact",
+      "points": 20
+    },
     {
-  "specs": {
-    "title": "Gebe den Zellen des Sudoku-Gitters einen Rahmen"
-  },
-  "name": "Give the Sudoku grid cells a border",
-  "feedback": "The cells in the Sudoku grid should have a border for clarity.",
-  "urls": [],
-  "file": "sudoku.html",
-  "javascript": "(function() { var cells = document.querySelectorAll('#sudoku-grid td'); for (var i = 0; i < cells.length; i++) { if (!window.getComputedStyle(cells[i]).border) return 'false'; } return 'true'; })()",
-  "output": "true",
-  "comparison": "exact",
-  "points": 20
-},
+      "specs": {
+        "title": "Füge unterhalb des Sudoku-Feldes eine Schaltfläche 'Lösung überprüfen' mit der ID 'check-solution' hinzu"
+      },
+      "name": "Include a button with ID 'check-solution' below the grid",
+      "feedback": "There should be a button below the grid with the text 'Lösung überprüfen' and an ID of 'check-solution'.",
+      "urls": [
+        "https://www.w3schools.com/tags/tag_button.asp"
+      ],
+      "file": "sudoku.html",
+      "javascript": "(function() { var checkButton = document.querySelector('button#check-solution'); return checkButton && checkButton.textContent.trim() === 'Lösung überprüfen' ? 'true' : 'false'; })()",
+      "output": "true",
+      "comparison": "exact",
+      "points": 20
+    },
     {
-  "specs": {
-    "title": "Sorge dafür, dass eine JavaScript Funktion pruefen() aufgerufen wird wenn der Button geklickt wird."
-  },
-  "name": "The function pruefen() needs to be called by the button",
-  "feedback": "Your button is not yet calling the function pruefen() in its click event handler",
-  "urls": [],
-  "file": "sudoku.html",
-  "javascript": "var wasPruefenCalled = false; function pruefen() { wasPruefenCalled = true; } (function() { document.getElementById('check-solution')?.click(); return wasPruefenCalled; })();",
-  "output": "true",
-  "comparison": "exact",
-  "points": 20
-}
-
-
-
+      "specs": {
+        "title": "Gebe den Zellen des Sudoku-Gitters einen Rahmen"
+      },
+      "name": "Give the Sudoku grid cells a border",
+      "feedback": "The cells in the Sudoku grid should have a border for clarity.",
+      "urls": [],
+      "file": "sudoku.html",
+      "javascript": "(function() { var cells = document.querySelectorAll('#sudoku-grid td'); for (var i = 0; i < cells.length; i++) { if (!window.getComputedStyle(cells[i]).border) return 'false'; } return 'true'; })()",
+      "output": "true",
+      "comparison": "exact",
+      "points": 20
+    },
+    {
+      "specs": {
+        "title": "Sorge dafür, dass eine JavaScript Funktion pruefen() aufgerufen wird wenn der Button geklickt wird."
+      },
+      "name": "The function pruefen() needs to be called by the button",
+      "feedback": "Your button is not yet calling the function pruefen() in its click event handler",
+      "urls": [],
+      "file": "sudoku.html",
+      "javascript": "var wasPruefenCalled = false; function pruefen() { wasPruefenCalled = true; } (function() { document.getElementById('check-solution')?.click(); return wasPruefenCalled; })();",
+      "output": "true",
+      "comparison": "exact",
+      "points": 20
+    }
   ]
 }
